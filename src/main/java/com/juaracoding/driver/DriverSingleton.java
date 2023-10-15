@@ -4,6 +4,7 @@ import com.juaracoding.driver.strategy.Android;
 import com.juaracoding.driver.strategy.DriverStrategy;
 import com.juaracoding.driver.strategy.DriverStrategyImplementer;
 import com.juaracoding.utils.Constants;
+import io.appium.java_client.MobileDriver;
 import io.appium.java_client.android.AndroidDriver;
 
 import java.net.MalformedURLException;
@@ -12,13 +13,13 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverSingleton {
     public static DriverSingleton instance = null;
-    private static AndroidDriver driver;
+    private static MobileDriver driver;
 
     public DriverSingleton(String driver) throws MalformedURLException {
         instantiate(driver);
     }
 
-    public AndroidDriver instantiate(String strategy) throws MalformedURLException {
+    public MobileDriver instantiate(String strategy) throws MalformedURLException {
         DriverStrategy driverStrategy = DriverStrategyImplementer.chooseStrategy(strategy);
         driver = driverStrategy.setStrategy();
         driver.manage().timeouts().implicitlyWait(Constants.TIMEOUT, TimeUnit.SECONDS);
@@ -33,7 +34,7 @@ public class DriverSingleton {
         return instance;
     }
 
-    public static AndroidDriver getDriver(){
+    public static MobileDriver getDriver(){
         return driver;
     }
 

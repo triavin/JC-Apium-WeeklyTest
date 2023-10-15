@@ -10,4 +10,5 @@ public class Constants {
     public static final String APPACTIVITY = "com.rookie.catatankeuangan.feature.splash.SplashActivity";
     public static final String URL = "http://127.0.0.1:4723/wd/hub";
     public static final long TIMEOUT = 30;
+    public static final String TESTAMOUNT = "1000";
 }

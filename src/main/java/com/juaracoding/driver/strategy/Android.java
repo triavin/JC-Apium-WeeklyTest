@@ -2,7 +2,6 @@ package com.juaracoding.driver.strategy;
 
 import com.juaracoding.utils.Constants;
 import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
