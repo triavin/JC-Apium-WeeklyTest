@@ -12,11 +12,11 @@ public class Android implements DriverStrategy{
     @Override
     public AndroidDriver setStrategy() throws MalformedURLException {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-        desiredCapabilities.setCapability("deviceName","CPH1701");
-        desiredCapabilities.setCapability("udid","87b2c81a");
-        desiredCapabilities.setCapability("platformName","Android");
-        desiredCapabilities.setCapability("appPackage","com.chad.financialrecord");
-        desiredCapabilities.setCapability("appActivity","com.rookie.catatankeuangan.feature.splash.SplashActivity");
+        desiredCapabilities.setCapability("deviceName",Constants.DEVICENAME);
+        desiredCapabilities.setCapability("udid",Constants.UDID);
+        desiredCapabilities.setCapability("platformName",Constants.PLATFORMNAME);
+        desiredCapabilities.setCapability("appPackage",Constants.APPPACKAGE);
+        desiredCapabilities.setCapability("appActivity",Constants.APPACTIVITY);
         desiredCapabilities.setCapability("noReset",true);
 
         URL url = new URL(Constants.URL);
