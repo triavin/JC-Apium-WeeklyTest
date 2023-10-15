@@ -4,6 +4,7 @@ import com.juaracoding.driver.DriverSingleton;
 import com.juaracoding.utils.AddTransaksiElement;
 import com.juaracoding.utils.Constants;
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -14,7 +15,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.net.MalformedURLException;
 
 public class AddTransaksi {
-    private AndroidDriver driver;
+    private MobileDriver driver;
     private MobileElement addBtn;
     private MobileElement incomeBtn;
     private MobileElement expenseBtn;
@@ -47,7 +48,6 @@ public class AddTransaksi {
         this.driver = DriverSingleton.getDriver();
 //        PageFactory.initElements(driver,this);
         DriverSingleton.delay(3);
-        this.addBtn = (MobileElement) driver.findElement(By.id(AddTransaksiElement.ADDBUTTON));
     }
 
     public void AddIncome(String amount, String note){
@@ -58,6 +58,7 @@ public class AddTransaksi {
     }
 
     public void addData() {
+        this.addBtn = (MobileElement) driver.findElement(By.id(AddTransaksiElement.ADDBUTTON));
         this.addBtn.click();
     }
 
